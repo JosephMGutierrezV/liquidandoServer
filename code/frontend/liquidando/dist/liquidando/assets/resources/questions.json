@@ -1,0 +1,22 @@
+[
+  {
+    "question": "¿Qué es Liquidando?",
+    "answer": " Liquidando es una plataforma donde podrá realizar liquidaciones de intereses corrientes, moratorios, indexaciones y actualizaciones para procesos judiciales de la forma más fácil y confiable."
+  },
+  {
+    "question": "¿Qué tasas puedo usar para mis liquidaciones?",
+    "answer": "En Liquidando podrá encontrar la tasa bancaria corriente, tasa de usura (máxima legal), indexación a IPC y tasa fija de acuerdo con la necesidad del usuario."
+  },
+  {
+    "question": "¿Qué métodos de pago reciben?",
+    "answer": "Nuestra plataforma utiliza el servicio de la pasarela de pagos de Mercado Pago, donde se podrá pagar por medio de tarjeta de crédito, débito, entre otros."
+  },
+  {
+    "question": "¿Puedo incluir abonos o capital adicional al monto de la liquidación?",
+    "answer": "Si, al momento de ingresar la información de la liquidación puede ingresar abonos o capitalizaciones que sean necesarias para el resultado deseado.,"
+  },
+  {
+    "question": "¿En qué formato puedo descargar los resultados de las liquidaciones?",
+    "answer": "Los resultados de las liquidaciones las puede descargar en formato PDF o Excel."
+  }
+]

@@ -1,0 +1,52 @@
+version: '3'
+services:
+  db:
+    image: mariadb
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: liquidando
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_user_pass
+    ports:
+      - "6033:3306"
+    volumes:
+      - ./dbdata:/var/lib/mysql
+    command: mysqld --default-authentication-plugin=mysql_native_password
+
+
+  phpmyadmin_flask:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 8081:80
+
+  flaskweb: 
+    build: 
+      context: ./code/backend
+    ports: 
+      - "8001:7550"
+    depends_on: 
+      - db
+    volumes:
+      - ./code/backend:/app
+    environment: 
+      FLASK_ENV: development
+    working_dir: /app
+    
+  # vuejs:
+  #   build: 
+  #     context: ./code/frontend/liquidando
+  #   ports:
+  #     - "8002:8080"
+  #   depends_on: 
+  #     - flaskweb
+  #   volumes: 
+  #     - ./code/frontend/liquidando:/usr/src/app/api
