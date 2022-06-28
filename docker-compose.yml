@@ -30,23 +30,21 @@ services:
 
   flaskweb: 
     build: 
-      context: ./code/backend
+      context: ./backend
     ports: 
       - "8001:7550"
     depends_on: 
       - db
     volumes:
-      - ./code/backend:/app
+      - ./backend:/app
     environment: 
       FLASK_ENV: development
     working_dir: /app
     
-  angular:
-     build: 
-       context: ./code/frontend/liquidando
-     ports:
-       - "80:80"
-     depends_on: 
-       - flaskweb
-     volumes: 
-       - ./code/frontend/liquidando:/usr/src/app/api
+  www:
+    image: nginx
+    restart: always
+    ports: 
+      - "80:80"
+    volumes: 
+      - ./nginx/www:/usr/share/nginx/html:ro
