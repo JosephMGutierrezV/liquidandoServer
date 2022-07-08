@@ -1,0 +1,204 @@
+<section id="report-liquide">
+  <style>
+    .input {
+      border-radius: 25px;
+      border: none;
+    }
+    .input-total {
+      border-radius: 25px;
+      border: none;
+      background-color: #00a19a !important;
+      color: #ffffff;
+    }
+    .h2-tile {
+      color: #00a19a;
+    }
+    .input-container {
+      border-radius: 25px;
+      border: none;
+      background-color: #ffffff !important;
+    }
+    .label-container {
+      color: #ffffff !important;
+    }
+    .container-middle {
+      background-color: #00685e;
+      border-radius: 50px;
+    }
+  </style>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 mb-5">
+        <form>
+          <div class="row">
+            <div class="form-group col-6">
+              <label for="demandante">{{ text.demandante }}</label>
+              <input
+                disabled
+                value="{{ value.demandante }}"
+                type="text"
+                class="form-control input"
+                id="demandante"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="total-intereses">{{ text.interesesTotal }}</label>
+              <input
+                disabled
+                value="{{ value.intereses }}"
+                type="text"
+                class="form-control input"
+                id="total-intereses"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="demandado">{{ text.demandado }}</label>
+              <input
+                disabled
+                value="{{ value.demandado }}"
+                type="text"
+                class="form-control input"
+                id="demandado"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="capital">{{ text.capital }}</label>
+              <input
+                disabled
+                value="{{ value.capital }}"
+                type="text"
+                class="form-control input"
+                id="capital"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="radicado">{{ text.radicado }}</label>
+              <input
+                disabled
+                value="{{ value.radicado }}"
+                type="text"
+                class="form-control input"
+                id="radicado"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="bigTotal">{{ text.totalGran }}</label>
+              <input
+                disabled
+                value="{{ value.total }}"
+                type="text"
+                class="form-control input-total"
+                id="bigTotal"
+              />
+            </div>
+            <div class="form-group col-6">
+              <label for="juzgado">{{ text.juzgado }}</label>
+              <input
+                disabled
+                value="{{ value.juzgado }}"
+                type="text"
+                class="form-control input"
+                id="juzgado"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 container-middle p-3 mb-5">
+        <form>
+          <div class="row">
+            <div class="form-group col-4">
+              <label class="label-container" for="initial-date"
+                >{{ text.initialDate }}</label
+              >
+              <input
+                disabled
+                value="{{ value.initialDate }}"
+                type="text"
+                class="form-control input-container"
+                id="initial-date"
+              />
+            </div>
+            <div class="form-group col-4">
+              <label class="label-container" for="final-date"
+                >{{ text.finalDate }}</label
+              >
+              <input
+                disabled
+                value="{{ value.finalDate }}"
+                type="text"
+                class="form-control input-container"
+                id="final-date"
+              />
+            </div>
+            <div class="form-group col-4">
+              <label class="label-container" for="tasa-interes"
+                >{{ text.tasaInteres }}</label
+              >
+              <input
+                disabled
+                value="{{ value.tasaInteres }}"
+                type="text"
+                class="form-control input-container"
+                id="tasa-interes"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-12 text-center mb-5">
+        <h2 class="h2-tile">{{ text.titleAbonos }}</h2>
+      </div>
+      <div class="col-12 mb-3">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">{{ text.date }}</th>
+              <th scope="col">{{ text.abono }}</th>
+              <th scope="col">{{ text.capitalizacion }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#dataGridAbono}}
+            <tr>
+              <td>{{ date }}</td>
+              <td>{{ abono }}</td>
+              <td>{{ capitalizacion }}</td>
+            </tr>
+            {{/dataGridAbono}}
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 text-center mb-5">
+        <h2 class="h2-tile">{{ text.titleInteres }}</h2>
+      </div>
+      <div class="col-12 mb-3">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">{{ text.date }}</th>
+              <th scope="col">{{ text.tasa }}</th>
+              <th scope="col">{{ text.intereses }}</th>
+              <th scope="col">{{ text.capital }}</th>
+              <th scope="col">{{ text.total }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#dataGridIntereses}}
+            <tr>
+              <td>{{ date }}</td>
+              <td>{{ tasa }}</td>
+              <td>{{ intereses }}</td>
+              <td>{{ capital }}</td>
+              <td>{{ total }}</td>
+            </tr>
+            {{/dataGridIntereses}}
+          </tbody>
+        </table>
+      </div>
+      <div class="col-12 text-right mb-5">
+        <img src="assets/images/liquidando2.png" alt="logo" width="100px" />
+      </div>
+    </div>
+  </div>
+</section>
