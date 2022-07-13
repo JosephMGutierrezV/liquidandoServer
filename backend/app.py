@@ -168,7 +168,6 @@ def abonos():
 		return jsonify({'data':"exito"})
 
 @app.route("/api/lista/tasas", methods=['GET'])
-@jwt_required
 def tasas():
 	result = db.session.query(Tasas).order_by(desc(Tasas.id)).first()
 	lista=[]
