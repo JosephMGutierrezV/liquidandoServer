@@ -43,7 +43,8 @@ from flask_jwt_extended import JWTManager, create_access_token, jwt_required, ge
 
 
 app = Flask(__name__)
-cors = CORS(app, resources={ r"*":{"origins":"*"}})
+cors = CORS(app, resources={ r"/api/*":{"origins":"*"}})
+#cors = CORS(app, resources={ r"*":{"origins":"*"}})
 app.config.from_object(DevelopmentConfig)
 jwt = JWTManager(app)
 
